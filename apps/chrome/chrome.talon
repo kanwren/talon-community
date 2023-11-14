@@ -12,3 +12,6 @@ tab search <user.text>$:
     sleep(200ms)
     insert("{text}")
     key(down)
+
+# note: must disable hold-to-quit through app dropdown in the finder bar
+chrome quit: user.chrome_mod("q")

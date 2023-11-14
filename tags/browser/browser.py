@@ -126,6 +126,9 @@ class BrowserActions:
         actions.browser.focus_address()
         actions.sleep("50ms")
         actions.insert(url)
+        # workaround to dismiss autosuggest, or else it will accept on enter
+        actions.insert(" ")
+        actions.key("delete")
         actions.key("enter")
 
     def go_home():
