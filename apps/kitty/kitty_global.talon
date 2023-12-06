@@ -29,10 +29,10 @@ pane layout binary:
 pane layout main:
     key("ctrl-shift-g")
     key("x")
-pane layout vertical:
+pane layout row:
     key("ctrl-shift-g")
     key("s")
-pane layout horizontal:
+pane layout column:
     key("ctrl-shift-g")
     key("v")
 pane layout decrease:
@@ -45,7 +45,7 @@ pane rotate:
 pane only:
     key("ctrl-shift-o")
 
-vsplit: key("ctrl-shift-w")
+vertical split: key("ctrl-shift-w")
 split: key(ctrl-shift-s)
 
 pane detach: key("ctrl-shift-d")
