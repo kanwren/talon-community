@@ -50,10 +50,7 @@ split: key(ctrl-shift-s)
 
 pane detach: key("ctrl-shift-d")
 pane close: key("ctrl-shift-q")
-pane left: key("ctrl-shift-h")
-pane right: key("ctrl-shift-l")
-pane down: key("ctrl-shift-j")
-pane up: key("ctrl-shift-k")
+pane <user.pane_navigations>: user.pane_navigate(pane_navigations)
 pane move left:
     key("ctrl-shift-m")
     key("h")

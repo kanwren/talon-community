@@ -1,15 +1,58 @@
 import os
 
-from talon import Context, actions, ui
+from talon import Context, Module, actions, ui
 
 # TODO: fit this to terminal.py
 
 ctx = Context()
+mod = Module()
+
 ctx.matches = r"""
 app: kitty
 """
 directories_to_remap = {}
 directories_to_exclude = {}
+
+ctx.lists["self.pane_navigation"] = {
+    "down": "down",
+    "left": "left",
+    "right": "right",
+    "up": "up",
+    "next": "next",
+    "previous": "previous",
+}
+mod.list("pane_navigation", desc="Pane navigation commands")
+
+@mod.capture(rule="{user.pane_navigation}")
+def pane_navigation(m) -> str:
+    "One pane navigation command"
+    return m.pane_navigation
+
+@mod.capture(rule="<user.pane_navigation>+")
+def pane_navigations(m) -> str:
+    "One or more pane navigation commands"
+    return str(m)
+
+
+@mod.action_class
+class Actions:
+    def pane_navigate(s: str):
+        "Follows one or more pane navigation commands"
+        for d in s.split():
+            if d == "left":
+                actions.key("ctrl-shift-h")
+            elif d == "right":
+                actions.key("ctrl-shift-l")
+            elif d == "up":
+                actions.key("ctrl-shift-k")
+            elif d == "down":
+                actions.key("ctrl-shift-j")
+            elif d == "next":
+                actions.key("ctrl-shift-u")
+            elif d == "previous":
+                actions.key("ctrl-shift-y")
+            else:
+                raise RuntimeError(f"Invalid pane navigation command: {d}")
 
 
 @ctx.action_class("edit")
