@@ -20,8 +20,8 @@ class EditActions:
 
 @ctx.action_class("user")
 class UserActions:
-    def tab_jump(n):
-        actions.key(f"ctrl-shift-{0 if n == 10 else n}")
+    def tab_jump(number: int):
+        actions.key(f"ctrl-shift-{0 if number == 10 else number}")
 
     def file_manager_current_path():
         title = ui.active_window().title
