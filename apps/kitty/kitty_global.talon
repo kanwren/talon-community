@@ -48,7 +48,15 @@ pane only:
 vertical split: key("ctrl-shift-w")
 split: key(ctrl-shift-s)
 
-pane detach: key("ctrl-shift-d")
+pane detach:
+    key("ctrl-shift-d")
+    key("a")
+pane detach tab:
+    key("ctrl-shift-d")
+    key("t")
+pane detach window:
+    key("ctrl-shift-d")
+    key("w")
 pane close: key("ctrl-shift-q")
 pane <user.pane_navigations>: user.pane_navigate(pane_navigations)
 pane move left:
