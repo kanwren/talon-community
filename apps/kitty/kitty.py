@@ -48,9 +48,11 @@ class Actions:
             elif d == "down":
                 actions.key("ctrl-shift-j")
             elif d == "next":
-                actions.key("ctrl-shift-u")
+                actions.key("ctrl-shift-e")
+                actions.key("n")
             elif d == "previous":
-                actions.key("ctrl-shift-y")
+                actions.key("ctrl-shift-e")
+                actions.key("p")
             else:
                 raise RuntimeError(f"Invalid pane navigation command: {d}")
 
