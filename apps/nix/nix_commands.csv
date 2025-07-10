@@ -1,0 +1,27 @@
+Subcommand, Spoken form (optional)
+build
+edit
+eval, evaluate
+flake
+flake archive
+flake check
+flake clone
+flake info
+flake init, flake initialize
+flake lock
+flake metadata
+flake new
+flake prefetch
+flake show
+flake update
+fmt, format
+log
+profile
+profile install
+profile list
+profile remove
+profile upgrade
+repl, read eval print loop
+run
+search
+shell
